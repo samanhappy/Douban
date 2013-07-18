@@ -18,7 +18,7 @@ public class WebDataGetApi {
 	private static final String TAG = "WebDataGetAPI";
 	private static final String USER_AGENT = "Mozilla/4.5";
 
-	protected String getRequest(String url) throws Exception {
+	public String getRequest(String url) throws Exception {
 		return getRequest(url, new DefaultHttpClient(new BasicHttpParams()));
 	}
 
@@ -32,16 +32,16 @@ public class WebDataGetApi {
 			getMethod.setHeader("User-Agent", USER_AGENT);
 			// HttpParams params = new HttpParams();
 
-			// Ìí¼ÓÓÃ»§ÃÜÂëÑéÖ¤ÐÅÏ¢
+			// ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½Ï¢
 			// client.getCredentialsProvider().setCredentials(
 			// new AuthScope(null, -1),
 			// new UsernamePasswordCredentials(mUsername, mPassword));
 
 			HttpResponse httpResponse = client.execute(getMethod);
-			// statusCode == 200 Õý³£
+			// statusCode == 200 ï¿½ï¿½
 			statusCode = httpResponse.getStatusLine().getStatusCode();
 			Log.d(TAG, "statuscode = " + statusCode);
-			// ´¦Àí·µ»ØµÄhttpResponseÐÅÏ¢
+			// ï¿½ï¿½ï¿½?ï¿½Øµï¿½httpResponseï¿½ï¿½Ï¢
 			result = retrieveInputStream(httpResponse.getEntity());
 		} catch (Exception e) {
 			Log.e(TAG, e.getMessage());
@@ -53,7 +53,7 @@ public class WebDataGetApi {
 	}
 
 	/**
-	 * ´¦ÀíhttpResponseÐÅÏ¢,·µ»ØString
+	 * ï¿½ï¿½ï¿½ï¿½httpResponseï¿½ï¿½Ï¢,ï¿½ï¿½ï¿½ï¿½String
 	 * 
 	 * @param httpEntity
 	 * @return String
