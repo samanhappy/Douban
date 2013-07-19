@@ -57,6 +57,8 @@ public class MyAdapter extends BaseAdapter {
 					.findViewById(R.id.bookName);
 			holder.bookRate = (RatingBar) convertView
 					.findViewById(R.id.ratingBar);
+			holder.ratingScore = (TextView) convertView
+					.findViewById(R.id.ratingScore);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
@@ -71,10 +73,12 @@ public class MyAdapter extends BaseAdapter {
 
 		holder.bookName.setText(bookList.get(position).getBook().getTitle());
 		holder.bookRate.setMax(bookList.get(position).getBook().getRating()
-				.getMax());
+				.getMax() * 10);
 		holder.bookRate.setProgress(Double.valueOf(
-				bookList.get(position).getBook().getRating().getAverage())
-				.intValue());
+				Double.valueOf(bookList.get(position).getBook().getRating()
+						.getAverage()) * 10).intValue());
+		holder.ratingScore.setText(bookList.get(position).getBook().getRating()
+				.getAverage());
 		return convertView;
 	}
 
@@ -82,6 +86,7 @@ public class MyAdapter extends BaseAdapter {
 		private ImageView bookPic;
 		private TextView bookName;
 		private RatingBar bookRate;
+		private TextView ratingScore;
 	}
 
 }

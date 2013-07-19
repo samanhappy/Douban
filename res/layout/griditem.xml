@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:paddingBottom="4dip" >
+    android:layout_height="wrap_content" >
 
     <ImageView
         android:id="@+id/bookPic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/bookPic" >
     </ImageView>
@@ -18,14 +17,33 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/bookPic"
         android:layout_centerHorizontal="true"
-        android:text="@string/bookName" >
+        android:ellipsize="marquee"
+        android:paddingTop="5dp"
+        android:singleLine="true"
+        android:text="@string/bookName"
+        android:textColor="@drawable/black" >
     </TextView>
 
     <RatingBar
         android:id="@+id/ratingBar"
+        style="@style/roomRatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bookName"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:paddingTop="7dp" />
+
+    <TextView
+        android:id="@+id/ratingScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bookName"
+        android:layout_toRightOf="@+id/ratingBar"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:textColor="@drawable/yellow"
+        android:textSize="12sp" />
 
 </RelativeLayout>

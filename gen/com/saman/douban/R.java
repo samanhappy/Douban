@@ -21,17 +21,28 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
+        public static final int black=0x7f020005;
+        public static final int blue=0x7f020008;
+        public static final int darkgray=0x7f020007;
         public static final int ic_launcher=0x7f020000;
+        public static final int lightgray=0x7f02000a;
+        public static final int lightred=0x7f020009;
+        public static final int room_rating_bar=0x7f020001;
+        public static final int room_select=0x7f020002;
+        public static final int room_unselect=0x7f020003;
+        public static final int white=0x7f020004;
+        public static final int yellow=0x7f020006;
     }
     public static final class id {
-        public static final int action_settings=0x7f080007;
+        public static final int action_settings=0x7f080008;
         public static final int bookName=0x7f080003;
         public static final int bookPic=0x7f080002;
         public static final int datePicker1=0x7f080000;
         public static final int editText1=0x7f080001;
-        public static final int gridview=0x7f080005;
+        public static final int gridview=0x7f080006;
         public static final int ratingBar=0x7f080004;
-        public static final int timePicker1=0x7f080006;
+        public static final int ratingScore=0x7f080005;
+        public static final int timePicker1=0x7f080007;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -58,11 +69,13 @@ public final class R {
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
         
 
         Base application theme for API 11+. This theme completely replaces
@@ -81,5 +94,6 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060001;
+        public static final int roomRatingBar=0x7f060002;
     }
 }
