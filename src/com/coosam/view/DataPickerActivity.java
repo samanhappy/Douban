@@ -1,12 +1,12 @@
-package com.saman.douban;
+package com.coosam.view;
 
 import java.util.Calendar;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.DatePicker.OnDateChangedListener;
+import android.widget.EditText;
 
 public class DataPickerActivity extends Activity {
 
@@ -29,8 +29,8 @@ public class DataPickerActivity extends Activity {
 
 					public void onDateChanged(DatePicker view, int year,
 							int monthOfYear, int dayOfMonth) {
-						dateEt.setText("ÄúÑ¡ÔñµÄÈÕÆÚÊÇ£º" + year + "Äê"
-								+ (monthOfYear + 1) + "ÔÂ" + dayOfMonth + "ÈÕ¡£");
+						dateEt.setText("ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½" + year + "ï¿½ï¿½"
+								+ (monthOfYear + 1) + "ï¿½ï¿½" + dayOfMonth + "ï¿½Õ¡ï¿½");
 					}
 
 				});

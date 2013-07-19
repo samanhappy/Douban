@@ -1,4 +1,4 @@
-package com.saman.douban;
+package com.coosam.view;
 
 import java.util.List;
 

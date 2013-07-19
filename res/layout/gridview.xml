@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 
-android:numColumns="auto_fit" ，GridView的列数设置为自动 
-android:columnWidth="90dp"，每列的宽度，也就是Item的宽度
-android:stretchMode="columnWidth"，缩放与列宽大小同步
-android:verticalSpacing="10dp"，两行之间的边距，如：行一(NO.0~NO.2)与行二(NO.3~NO.5)间距为10dp
-android:horizontalSpacing="10dp"，两列之间的边距
- -->
- 
-<GridView xmlns:android="http://schemas.android.com/apk/res/android" 
-    android:id="@+id/gridview"
-    android:layout_width="fill_parent" 
-    android:layout_height="fill_parent"
-    android:numColumns="auto_fit"
-    android:verticalSpacing="30dp"
-    android:horizontalSpacing="10dp"
-    android:columnWidth="90dp"
-    android:stretchMode="columnWidth"
-    android:gravity="center"
-    android:padding="10dp"
-    android:background="@drawable/white"
-/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:paddingTop="5dp"
+        android:singleLine="true"
+        android:text="@string/app_name"
+        android:textColor="@drawable/black" >
+    </TextView>
+
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/white"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="auto_fit"
+        android:padding="10dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="30dp" />
+
+</LinearLayout>

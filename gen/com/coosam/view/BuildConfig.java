@@ -1,5 +1,5 @@
 /** Automatically generated file. DO NOT MODIFY */
-package com.saman.douban;
+package com.coosam.view;
 
 public final class BuildConfig {
     public final static boolean DEBUG = true;

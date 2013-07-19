@@ -1,4 +1,4 @@
-package com.saman.douban;
+package com.coosam.view;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -21,7 +21,7 @@ public class TimePickerActivity extends Activity {
 		timePicker.setOnTimeChangedListener(new OnTimeChangedListener() {
 
 			public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-				timeEt.setText("ÄúÑ¡ÔñµÄÊ±¼äÊÇ£º" + hourOfDay + "Ê±" + minute + "·Ö¡£");
+				timeEt.setText("ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ç£ï¿½" + hourOfDay + "Ê±" + minute + "ï¿½Ö¡ï¿½");
 			}
 
 		});

@@ -1,4 +1,4 @@
-package com.saman.douban;
+package com.coosam.view;
 
 import java.lang.ref.SoftReference;  
 import java.net.URL;  
@@ -9,16 +9,16 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;  
 import android.os.Message;  
   
-//¸ÃÀàµÄÖ÷Òª×÷ÓÃÊÇÊµÏÖÍ¼Æ¬µÄÒì²½¼ÓÔØ  
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ì²½ï¿½ï¿½ï¿½ï¿½  
 public class AsyncImageLoader {  
-    // Í¼Æ¬»º´æ¶ÔÏó  
-    // ¼üÊÇÍ¼Æ¬µÄURL£¬ÖµÊÇÒ»¸öSoftReference¶ÔÏó£¬¸Ã¶ÔÏóÖ¸ÏòÒ»¸öDrawable¶ÔÏó  
+    // Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
+    // ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½URLï¿½ï¿½Öµï¿½ï¿½Ò»ï¿½ï¿½SoftReferenceï¿½ï¿½ï¿½ó£¬¸Ã¶ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ò»ï¿½ï¿½Drawableï¿½ï¿½ï¿½ï¿½  
     private Map<String, SoftReference<Drawable>> imageCache = new HashMap<String, SoftReference<Drawable>>();  
   
-    // ÊµÏÖÍ¼Æ¬µÄÒì²½¼ÓÔØ  
+    // Êµï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ì²½ï¿½ï¿½ï¿½ï¿½  
     public Drawable loadDrawable(final String imageUrl,  
             final ImageCallback callback) {  
-        // ²éÑ¯»º´æ£¬²é¿´µ±Ç°ĞèÒªÏÂÔØµÄÍ¼Æ¬ÊÇ·ñÒÑ¾­´æÔÚÓÚ»º´æµ±ÖĞ  
+        // ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½æ£¬ï¿½é¿´ï¿½ï¿½Ç°ï¿½ï¿½Òªï¿½ï¿½ï¿½Øµï¿½Í¼Æ¬ï¿½Ç·ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú»ï¿½ï¿½æµ±ï¿½ï¿½  
         if (imageCache.containsKey(imageUrl)) {  
             SoftReference<Drawable> softReference = imageCache.get(imageUrl);  
             if (softReference.get() != null) {  
@@ -32,11 +32,11 @@ public class AsyncImageLoader {
                 callback.imageLoaded((Drawable) msg.obj);  
             }  
         };  
-        // ĞÂ¿ª±ÙÒ»¸öÏß³Ì£¬¸ÃÏß³ÌÓÃÓÚ½øĞĞÍ¼Æ¬µÄÏÂÔØ  
+        // ï¿½Â¿ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ß³Ì£ï¿½ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½ï¿½Ú½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
         new Thread() {  
             public void run() {  
                 Drawable drawable = loadImageFromUrl(imageUrl);  
-                // È»ºó°ÑÍ¼Æ¬·ÅÈë»º´æµ±ÖĞ  
+                // È»ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ë»ºï¿½æµ±ï¿½ï¿½  
                 imageCache.put(imageUrl, new SoftReference<Drawable>(drawable));  
                 Message message = handler.obtainMessage(0, drawable);  
                 handler.sendMessage(message);  
@@ -45,10 +45,10 @@ public class AsyncImageLoader {
         return null;  
     }  
   
-    // ¸Ã·½·¨ÓÃÓÚ¸ù¾İÍ¼Æ¬µÄURL£¬´ÓÍøÂçÉÏÏÂÔØÍ¼Æ¬  
+    // ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½Í¼Æ¬ï¿½ï¿½URLï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬  
     protected Drawable loadImageFromUrl(String imageUrl) {  
         try {  
-            // ¸ù¾İÍ¼Æ¬µÄURL£¬ÏÂÔØÍ¼Æ¬£¬²¢Éú³ÉÒ»¸öDrawable¶ÔÏó  
+            // ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½URLï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Drawableï¿½ï¿½ï¿½ï¿½  
             return Drawable.createFromStream(new URL(imageUrl).openStream(),  
                     "src");  
   
@@ -57,7 +57,7 @@ public class AsyncImageLoader {
         }  
     }  
   
-    // »Øµ÷½Ó¿Ú  
+    // ï¿½Øµï¿½ï¿½Ó¿ï¿½  
     public interface ImageCallback {  
         public void imageLoaded(Drawable imageDrawable);  
     }  

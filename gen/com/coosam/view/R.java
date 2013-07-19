@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.saman.douban;
+package com.coosam.view;
 
 public final class R {
     public static final class attr {
@@ -34,22 +34,30 @@ public final class R {
         public static final int yellow=0x7f020006;
     }
     public static final class id {
-        public static final int action_settings=0x7f080008;
-        public static final int bookName=0x7f080003;
-        public static final int bookPic=0x7f080002;
+        public static final int action_settings=0x7f08000d;
+        public static final int appName=0x7f080008;
+        public static final int bookName=0x7f080004;
+        public static final int bookPic=0x7f080003;
         public static final int datePicker1=0x7f080000;
         public static final int editText1=0x7f080001;
-        public static final int gridview=0x7f080006;
-        public static final int ratingBar=0x7f080004;
-        public static final int ratingScore=0x7f080005;
-        public static final int timePicker1=0x7f080007;
+        public static final int gridview=0x7f080009;
+        public static final int parent_layout=0x7f080007;
+        public static final int ratingBar=0x7f080005;
+        public static final int ratingScore=0x7f080006;
+        public static final int tab1=0x7f08000a;
+        public static final int tab2=0x7f08000b;
+        public static final int tabgridview=0x7f080002;
+        public static final int timePicker1=0x7f08000c;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int datepicker=0x7f030001;
-        public static final int griditem=0x7f030002;
-        public static final int gridview=0x7f030003;
-        public static final int timepicker=0x7f030004;
+        public static final int fragment_tab1=0x7f030002;
+        public static final int fragment_tab2=0x7f030003;
+        public static final int griditem=0x7f030004;
+        public static final int gridview=0x7f030005;
+        public static final int tabhost=0x7f030006;
+        public static final int timepicker=0x7f030007;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -61,6 +69,8 @@ public final class R {
         public static final int bookPic=0x7f050007;
         public static final int hello=0x7f050003;
         public static final int hello_world=0x7f050002;
+        public static final int tab1=0x7f050009;
+        public static final int tab2=0x7f05000a;
         public static final int test_name1=0x7f050004;
         public static final int test_name2=0x7f050005;
         public static final int test_name3=0x7f050006;

@@ -1,7 +1,7 @@
-package com.saman.douban;
+package com.coosam.view;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
 
 public class MainActivity extends Activity {

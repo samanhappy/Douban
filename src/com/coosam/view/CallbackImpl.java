@@ -1,4 +1,4 @@
-package com.saman.douban;
+package com.coosam.view;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
   

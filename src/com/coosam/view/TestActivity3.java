@@ -1,9 +1,9 @@
-package com.saman.douban;
+package com.coosam.view;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-public class TestActivity1 extends Activity {
+public class TestActivity3 extends Activity {
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
