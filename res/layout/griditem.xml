@@ -8,7 +8,9 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
-        android:contentDescription="@string/bookPic" >
+        android:contentDescription="@string/bookPic" 
+        android:paddingLeft="10dp"
+        >
     </ImageView>
 
     <TextView
@@ -32,8 +34,8 @@
         android:layout_below="@+id/bookName"
         android:layout_centerHorizontal="true"
         android:isIndicator="true"
-        android:numStars="5"
-        android:paddingTop="7dp" />
+        android:paddingTop="8dp" 
+        />
 
     <TextView
         android:id="@+id/ratingScore"

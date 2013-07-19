@@ -1,9 +1,6 @@
 package com.saman.douban;
 
 import java.util.List;
-import java.util.Map;
-
-import com.coosam.bean.BookCollection;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -15,9 +12,10 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-public class MyAdapter extends BaseAdapter {
+import com.coosam.bean.BookCollection;
+import com.coosam.bean.BookRating;
 
-	private Context context;
+public class MyAdapter extends BaseAdapter {
 
 	private LayoutInflater layoutInflater;
 
@@ -26,7 +24,6 @@ public class MyAdapter extends BaseAdapter {
 	private List<BookCollection> bookList;
 
 	public MyAdapter(Context context, List<BookCollection> data) {
-		this.context = context;
 		layoutInflater = LayoutInflater.from(context);
 		this.bookList = data;
 	}
@@ -72,13 +69,12 @@ public class MyAdapter extends BaseAdapter {
 		}
 
 		holder.bookName.setText(bookList.get(position).getBook().getTitle());
-		holder.bookRate.setMax(bookList.get(position).getBook().getRating()
-				.getMax() * 10);
-		holder.bookRate.setProgress(Double.valueOf(
-				Double.valueOf(bookList.get(position).getBook().getRating()
-						.getAverage()) * 10).intValue());
-		holder.ratingScore.setText(bookList.get(position).getBook().getRating()
-				.getAverage());
+		holder.bookRate.setNumStars(5);
+		holder.bookRate.setStepSize(0.1f);
+		BookRating rating = bookList.get(position).getBook().getRating();
+		holder.bookRate.setRating(Float.valueOf(rating.getAverage())
+				/ rating.getMax() * 5);
+		holder.ratingScore.setText(rating.getAverage());
 		return convertView;
 	}
 
