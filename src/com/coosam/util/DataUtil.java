@@ -5,8 +5,11 @@ import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,6 +22,13 @@ public class DataUtil
 	private static final String SETTER_METHOD_PREFIX = "set";
 
 	private static final Locale locale = Locale.CHINA;
+	
+	private static Map<String, Class<?>> classMap = new HashMap<String, Class<?>>();
+	
+	static
+	{
+		classMap.put("collections", BookCollection.class);
+	}
 
 	/**
 	 * 
@@ -27,9 +37,9 @@ public class DataUtil
 	 * @param clazz
 	 * @return
 	 */
-	public static Object jsonObject2Object(JSONObject json, Class<?> clazz)
+	public static <T> T jsonObject2Object(JSONObject json, Class<T> clazz)
 	{
-		Object object;
+		T object;
 		try
 		{
 			object = clazz.newInstance();
@@ -51,7 +61,7 @@ public class DataUtil
 					}
 					else if (fieldClass.equals(List.class))
 					{
-						value = jsonArray2List((JSONArray) value, getClassByName(fieldName));
+						value = jsonArray2List((JSONArray) value, classMap.get(fieldName));
 					}
 					else
 					{
@@ -77,9 +87,9 @@ public class DataUtil
 	 * @param clazz
 	 * @return
 	 */
-	public static List<Object> jsonArray2List(JSONArray array, Class<?> clazz)
+	public static <T> List<T> jsonArray2List(JSONArray array, Class<T> clazz)
 	{
-		List<Object> list = new ArrayList<Object>();
+		List<T> list = new ArrayList<T>();
 		for (int i = 0; i < array.length(); i++)
 		{
 			try
@@ -94,14 +104,6 @@ public class DataUtil
 		return list;
 	}
 
-	public static Class<?> getClassByName(String name)
-	{
-		if (name.equals("collections"))
-		{
-			return BookCollection.class;
-		}
-		return null;
-	}
 
 	/**
 	 * 
@@ -137,7 +139,7 @@ public class DataUtil
 	public static void main(String[] args) throws JSONException
 	{
 		JSONObject json = new JSONObject("{\"count\":20,\"start\":0,\"total\":117,\"collections\":[{\"status\":\"wish\",\"updated\":\"2013-07-12 16:25:47\",\"user_id\":\"43963667\",\"book\":{\"rating\":{\"max\":10,\"numRaters\":646,\"average\":\"8.7\",\"min\":0},\"image\":\"http://img3.douban.com/mpic/s6089770.jpg\",\"title\":\"冬吴相对论\",\"url\":\"http://api.douban.com/v2/book/4124834\"},\"book_id\":\"4124834\",\"id\":703342186}]}");
-		APIResponse response = (APIResponse) DataUtil.jsonObject2Object(json, APIResponse.class);
+		APIResponse response = DataUtil.jsonObject2Object(json, APIResponse.class);
 
 		System.out.println(response.getCount());
 		System.out.println(response.getCollections().get(0).getBook().getImage());
