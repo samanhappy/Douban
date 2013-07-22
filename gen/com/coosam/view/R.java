@@ -34,7 +34,7 @@ public final class R {
         public static final int yellow=0x7f020006;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000d;
+        public static final int action_settings=0x7f08000e;
         public static final int appName=0x7f080008;
         public static final int bookName=0x7f080004;
         public static final int bookPic=0x7f080003;
@@ -48,6 +48,7 @@ public final class R {
         public static final int tab2=0x7f08000b;
         public static final int tabgridview=0x7f080002;
         public static final int timePicker1=0x7f08000c;
+        public static final int viewPager=0x7f08000d;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -58,6 +59,7 @@ public final class R {
         public static final int gridview=0x7f030005;
         public static final int tabhost=0x7f030006;
         public static final int timepicker=0x7f030007;
+        public static final int viewpaper_layout=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -80,11 +82,13 @@ public final class R {
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
 
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
 
         
 
@@ -99,11 +103,12 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f060001;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
-        public static final int roomRatingBar=0x7f060002;
+        public static final int AppTheme=0x7f060002;
+        public static final int PagerTabStripText=0x7f060000;
+        public static final int roomRatingBar=0x7f060003;
     }
 }
