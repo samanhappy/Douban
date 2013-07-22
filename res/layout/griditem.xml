@@ -33,7 +33,7 @@
         android:layout_below="@+id/bookName"
         android:layout_centerHorizontal="true"
         android:isIndicator="true"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="12dp"
         android:paddingTop="8dp" />
 
     <TextView
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/bookName"
         android:layout_toRightOf="@+id/ratingBar"
-        android:paddingLeft="5dp"
+        android:paddingLeft="4dp"
         android:paddingTop="5dp"
         android:textColor="@drawable/yellow"
         android:textSize="12sp" />
