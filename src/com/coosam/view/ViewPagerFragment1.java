@@ -3,6 +3,7 @@ package com.coosam.view;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -11,6 +12,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
 import com.coosam.bean.APIResponse;
@@ -18,7 +21,7 @@ import com.coosam.http.JsonDataGetApi;
 import com.coosam.thread.ThreadPoolUtils;
 import com.coosam.util.DataUtil;
 
-public class ViewPagerFragment1 extends Fragment {
+public class ViewPagerFragment1 extends Fragment implements OnItemClickListener {
 
 	private Handler myHandler;
 
@@ -26,20 +29,22 @@ public class ViewPagerFragment1 extends Fragment {
 
 	GridView gridview = null;
 
-
-    /**
-     * 覆盖此函数，先通过inflater inflate函数得到view最后返回
-     */
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    	View view = inflater.inflate(R.layout.fragment_tab1, container, false);
+	/**
+	 * 覆盖此函数，先通过inflater inflate函数得到view最后返回
+	 */
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		Log.d("MyHandler", "oncreateView");
+		View view = inflater.inflate(R.layout.fragment_tab1, container, false);
 		gridview = (GridView) view.findViewById(R.id.tabgridview);
+		gridview.setOnItemClickListener(this);
 		myHandler = new MyHandler();
 		ThreadPoolUtils.execute(new MyRunnable());
 		return view;
-    }
-    
-    private class MyRunnable implements Runnable {
+	}
+
+	private class MyRunnable implements Runnable {
 		@Override
 		public void run() {
 
@@ -87,4 +92,16 @@ public class ViewPagerFragment1 extends Fragment {
 		}
 
 	}
+
+	@Override
+	public void onItemClick(AdapterView<?> adapterView, View view, int position, long arg3) {
+		Log.e("click", "1111111111");
+		System.out.println("click");
+
+		System.out.println(adapterView.getItemAtPosition(position));
+
+		Intent intent = new Intent(view.getContext(), TimePickerActivity.class);
+		startActivity(intent);
+	}
+
 }

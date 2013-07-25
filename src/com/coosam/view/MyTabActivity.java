@@ -34,9 +34,9 @@ public class MyTabActivity extends FragmentActivity {
 		vp.setAdapter(new myPagerAdapter(getSupportFragmentManager(),
 				fragmentList, titleList));
 		
-		/*PagerTabStrip pts = (PagerTabStrip) findViewById(R.id.paterTabStrip);
+		PagerTabStrip pts = (PagerTabStrip) findViewById(R.id.paperTabStrip);
 		pts.setTextSpacing(100);
-		pts.set*/
+		pts.setDrawFullUnderline(true);
 	}
 
 	/**

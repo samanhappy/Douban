@@ -1,13 +1,11 @@
 package com.coosam.view;
 
+import java.util.HashMap;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.coosam.bean.APIResponse;
-import com.coosam.http.JsonDataGetApi;
-import com.coosam.thread.ThreadPoolUtils;
-import com.coosam.util.DataUtil;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -16,9 +14,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
-public class Tab1Fragment extends Fragment {
+import com.coosam.bean.APIResponse;
+import com.coosam.http.JsonDataGetApi;
+import com.coosam.thread.ThreadPoolUtils;
+import com.coosam.util.DataUtil;
+
+public class Tab1Fragment extends Fragment implements OnItemClickListener {
 
 	private Handler myHandler;
 
@@ -34,6 +39,7 @@ public class Tab1Fragment extends Fragment {
 		gridview = (GridView) view.findViewById(R.id.tabgridview);
 		myHandler = new MyHandler();
 		ThreadPoolUtils.execute(new MyRunnable());
+		gridview.setOnItemClickListener(this);
 		return view;
 
 	}
@@ -85,6 +91,11 @@ public class Tab1Fragment extends Fragment {
 			gridview.setAdapter(myAdapter);
 		}
 
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		Log.e("click", "1111111111");
 	}
 
 }

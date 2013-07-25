@@ -34,13 +34,14 @@ public final class R {
         public static final int yellow=0x7f020006;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000e;
+        public static final int action_settings=0x7f08000f;
         public static final int appName=0x7f080008;
         public static final int bookName=0x7f080004;
         public static final int bookPic=0x7f080003;
         public static final int datePicker1=0x7f080000;
         public static final int editText1=0x7f080001;
         public static final int gridview=0x7f080009;
+        public static final int paperTabStrip=0x7f08000e;
         public static final int parent_layout=0x7f080007;
         public static final int ratingBar=0x7f080005;
         public static final int ratingScore=0x7f080006;
